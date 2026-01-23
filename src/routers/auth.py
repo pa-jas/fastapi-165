@@ -1,7 +1,7 @@
 """Authentication router - HTTP Basic Auth"""
 from fastapi import APIRouter, Depends
 from pydantic import BaseModel
-from config.auth import verify_credentials
+from src.config.auth import verify_credentials
 
 router = APIRouter(prefix="/api/auth", tags=["Authentication"])
 

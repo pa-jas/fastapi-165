@@ -3,8 +3,8 @@ from fastapi import APIRouter, HTTPException, Query, Depends
 from sqlalchemy import text
 from typing import Dict, Any, Optional
 from datetime import datetime
-from config.database import engine
-from config.auth import verify_credentials
+from src.config.database import engine
+from src.config.auth import verify_credentials
 
 router = APIRouter(prefix="/api/jasdatadaily", tags=["JasDataDaily"])
 

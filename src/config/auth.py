@@ -1,7 +1,7 @@
 """Authentication configuration - HTTP Basic Auth"""
 from fastapi import Depends, HTTPException, status
 from fastapi.security import HTTPBasic, HTTPBasicCredentials
-from config.users import authenticate_user
+from src.config.users import authenticate_user
 
 # HTTP Basic Auth scheme
 security = HTTPBasic()

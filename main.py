@@ -5,7 +5,7 @@ This is the main entry point for the FastAPI application.
 To add a new API, create a router file in routers/ and include it here.
 """
 from fastapi import FastAPI
-from routers import health, jasdatadaily, auth
+from src.routers import health, jasdatadaily, auth
 
 # Create FastAPI app
 app = FastAPI(
