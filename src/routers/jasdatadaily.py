@@ -99,11 +99,7 @@ async def get_jasdatadaily(
             data = [dict(zip(columns, row)) for row in rows]
             
             return {
-                "total": total,
-                "count": len(data),
-                "date_from": date_from,
-                "date_to": date_to,
-                "data": data
+                "total": total
             }
     except HTTPException:
         # Re-raise HTTP exceptions (validation errors)
