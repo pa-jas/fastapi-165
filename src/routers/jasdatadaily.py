@@ -32,12 +32,7 @@ async def get_jasdatadaily(
                 date_to=date_to,
                 column_name="date",
             )
-            
-            # Get total count with date filter
-            count_query = f"SELECT COUNT(*) as total FROM main.jasdatadaily {where_clause}"
-            count_result = conn.execute(text(count_query), params)
-            total = count_result.fetchone()[0]
-            
+
             # Get all data with date filter (no limit)
             query = text(f"""
                 SELECT * FROM main.jasdatadaily 
@@ -55,9 +50,11 @@ async def get_jasdatadaily(
             
             # Convert to list of dictionaries
             data = [dict(zip(columns, row)) for row in rows]
-            
+
             return {
-                "total": total
+                "date_from": date_from,
+                "date_to": date_to,
+                "data": data,
             }
     except HTTPException:
         # Re-raise HTTP exceptions (validation errors)

@@ -35,10 +35,6 @@ async def get_refuel_trx(
                 column_name="TRX_DATE",
             )
 
-            count_query = f"SELECT COUNT(*) as total FROM crocs.stg.REFUEL_TRX {where_clause}"
-            count_result = conn.execute(text(count_query), params)
-            total = count_result.fetchone()[0]
-
             query = text(f"""
                 SELECT *
                 FROM crocs.stg.REFUEL_TRX
@@ -53,7 +49,6 @@ async def get_refuel_trx(
             data = [dict(zip(columns, row)) for row in rows]
 
             return {
-                "total": total,
                 "date_from": date_from,
                 "date_to": date_to,
                 "data": data,
