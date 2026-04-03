@@ -152,3 +152,9 @@ async def protected_endpoint(current_user: dict = Depends(verify_token)):
 ```
 
 See `src/AUTH_GUIDE.md` for complete authentication documentation.
+
+
+
+# How to Run
+Pull then run : 
+docker run --rm -p 5000:5000 jasperformanceanalytics/fastapi_166:v1.0.0
