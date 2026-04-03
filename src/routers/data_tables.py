@@ -35,6 +35,7 @@ class TableEndpointSpec:
     # Trusted SQL fragment, e.g. main.jasdatadaily or stg."REFUEL_TRX"
     from_sql: str
     use_date_filter: bool
+    # Use quoted identifiers when the DB column is case-sensitive, e.g. '"TRX_DATE"'
     date_column: Optional[str] = None
     order_by_column: Optional[str] = None
 
@@ -60,8 +61,9 @@ TABLE_ENDPOINTS: list[TableEndpointSpec] = [
         engine_name="crocs",
         from_sql='stg."REFUEL_TRX"',
         use_date_filter=True,
-        date_column="TRX_DATE",
-        order_by_column="TRX_DATE",
+        # Quoted so PostgreSQL keeps uppercase (matches select "TRX_DATE" from ...)
+        date_column='"TRX_DATE"',
+        order_by_column='"TRX_DATE"',
     ),
 ]
 
