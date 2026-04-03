@@ -5,7 +5,7 @@ This is the main entry point for the FastAPI application.
 To add a new API, create a router file in routers/ and include it here.
 """
 from fastapi import FastAPI
-from src.routers import health, jasdatadaily, auth
+from src.routers import auth, health, jasdatadaily, crocs_refuel_trx
 
 # Create FastAPI app
 app = FastAPI(
@@ -30,6 +30,7 @@ async def root():
 app.include_router(health.router)  # Public endpoint
 app.include_router(auth.router)    # Authentication endpoints
 app.include_router(jasdatadaily.router)  # Protected endpoints
+app.include_router(crocs_refuel_trx.router)  # Protected endpoints
 
 # To add a new API router:
 # 1. Create a new file in routers/ (e.g., routers/my_new_api.py)
