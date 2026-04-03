@@ -60,8 +60,8 @@ TABLE_ENDPOINTS: list[TableEndpointSpec] = [
         engine_name="crocs",
         from_sql='stg."REFUEL_TRX"',
         use_date_filter=True,
-        date_column="trx_date",
-        order_by_column="trx_date",
+        date_column="TRX_DATE",
+        order_by_column="TRX_DATE",
     ),
 ]
 
