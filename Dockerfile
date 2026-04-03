@@ -20,11 +20,11 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir --upgrade pip && \
     pip install --no-cache-dir -r requirements.txt
 
-# Copy application code
-COPY . .
+# Copy application code only (no Dockerfile, docs, or other repo files)
+COPY src/ ./src/
 
-# Expose port
-EXPOSE 8000
+# Expose port (must match uvicorn --port)
+EXPOSE 5000
 
 # Run the application
-CMD ["uvicorn", "main:app", "--host", "127.0.0.1", "--port", "5000"]
+CMD ["uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "5000"]
