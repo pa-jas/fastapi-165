@@ -65,6 +65,35 @@ TABLE_ENDPOINTS: list[TableEndpointSpec] = [
         date_column='"TRX_DATE"',
         order_by_column='"TRX_DATE"',
     ),
+    TableEndpointSpec(
+        path="/api/crocs/cmms_asset",
+        tags=["CrocsCmmsAsset"],
+        engine_name="crocs",
+        from_sql='stg."CMMS_ASSET"',
+        use_date_filter=False,
+    ),
+    TableEndpointSpec(
+        path="/api/crocs/cmms_type",
+        tags=["CrocsCmmsType"],
+        engine_name="crocs",
+        from_sql='stg."CMMS_TYPE"',
+        use_date_filter=False,
+    ),
+    TableEndpointSpec(
+        path="/api/crocs/cmms_gse_utilization",
+        tags=["CrocsCmmsGseUtilization"],
+        engine_name="crocs",
+        from_sql='stg."CMMS_GSE_UTILIZATION"',
+        use_date_filter=False,
+    ),
+    TableEndpointSpec(
+        path="/api/crocs/refuel_vendor",
+        tags=["CrocsRefuelVendor"],
+        engine_name="crocs",
+        from_sql='stg."REFUEL_VENDOR"',
+        use_date_filter=False,
+    ),
+
 ]
 
 
