@@ -66,17 +66,17 @@ TABLE_ENDPOINTS: list[TableEndpointSpec] = [
         order_by_column='"TRX_DATE"',
     ),
     TableEndpointSpec(
-        path="/api/crocs/cmms_asset",
-        tags=["CrocsCmmsAsset"],
+        path="/api/crocs/cmms_assets2",
+        tags=["CrocsCmmsAssets2"],
         engine_name="crocs",
-        from_sql='stg."CMMS_ASSET"',
+        from_sql='stg."CMMS_ASSETS2"',
         use_date_filter=False,
     ),
     TableEndpointSpec(
-        path="/api/crocs/cmms_type",
-        tags=["CrocsCmmsType"],
+        path="/api/crocs/cmms_asset_type",
+        tags=["CrocsCmmsAssetType"],
         engine_name="crocs",
-        from_sql='stg."CMMS_TYPE"',
+        from_sql='stg."CMMS_ASSET_TYPE"',
         use_date_filter=False,
     ),
     TableEndpointSpec(
