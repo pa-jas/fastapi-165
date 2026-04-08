@@ -127,8 +127,6 @@ async def _execute_table_query(
             data = [dict(zip(columns, row)) for row in rows]
 
             return {
-                "date_from": date_from,
-                "date_to": date_to,
                 "data": data,
             }
     except HTTPException:
